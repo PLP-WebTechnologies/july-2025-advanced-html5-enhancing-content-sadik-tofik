@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Enhanced HTML5 Content & Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f9f9f9; }
+        main { max-width: 800px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+        h1, h2 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+        th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+        th { background: #f0f0f0; }
+        fieldset { border: 1px solid #bbb; border-radius: 4px; margin-bottom: 1.5rem; padding: 1rem; }
+        legend { font-weight: bold; }
+        label { display: block; margin-top: 1rem; }
+        input, select, textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #ccc; border-radius: 4px; }
+        .form-row { margin-bottom: 1rem; }
+        button { background: #2980b9; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+        button:hover { background: #1c5980; }
+        .media-section { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .media-section figure { margin: 0; }
+        @media (max-width: 600px) {
+            .media-section { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>HTML5 Content Enhancement & Advanced Form Demo</h1>
+        <p>This page demonstrates advanced HTML5 content elements and a feature-rich, accessible form with built-in validation.</p>
+    </header>
+
+    <section>
+        <h2>Popular Web Development Topics</h2>
+        <ul>
+            <li>Semantic HTML5 Elements</li>
+            <li>Responsive Web Design</li>
+            <li>CSS Flexbox & Grid</li>
+            <li>Accessibility Best Practices</li>
+            <li>Modern JavaScript (ES6+)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Comparison Table: HTML5 vs HTML4</h2>
+        <table>
+            <caption>Key Differences Between HTML5 and HTML4</caption>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>HTML4</th>
+                    <th>HTML5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Doctype</td>
+                    <td>&lt;!DOCTYPE HTML PUBLIC...&gt;</td>
+                    <td>&lt;!DOCTYPE html&gt;</td>
+                </tr>
+                <tr>
+                    <td>Audio/Video Support</td>
+                    <td>No native support</td>
+                    <td>&lt;audio&gt;, &lt;video&gt; elements</td>
+                </tr>
+                <tr>
+                    <td>Form Input Types</td>
+                    <td>Limited (text, password, etc.)</td>
+                    <td>Many new types (email, date, range, etc.)</td>
+                </tr>
+                <tr>
+                    <td>Semantic Elements</td>
+                    <td>Few (div, span)</td>
+                    <td>Many (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;...)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="media-section">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Laptop with code editor" width="250" height="167">
+            <figcaption>Modern web development workspace</figcaption>
+        </figure>
+        <figure>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <figcaption>Sample Audio: SoundHelix Song</figcaption>
+        </figure>
+        <figure>
+            <video width="250" controls poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <figcaption>Sample Video: Big Buck Bunny</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Registration Form</h2>
+        <form action="#" method="post" autocomplete="on" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-row">
+                    <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="fullname" name="fullname" required minlength="3" maxlength="50" placeholder="e.g. Jane Doe" autocomplete="name">
+                </div>
+                <div class="form-row">
+                    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="e.g. jane@example.com" autocomplete="email">
+                </div>
+                <div class="form-row">
+                    <label for="dob">Date of Birth <span aria-hidden="true">*</span></label>
+                    <input type="date" id="dob" name="dob" required min="1900-01-01" max="2025-12-31">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+                <div class="form-row">
+                    <label for="username">Username <span aria-hidden="true">*</span></label>
+                    <input type="text" id="username" name="username" required pattern="^[a-zA-Z0-9_]{5,15}$" minlength="5" maxlength="15" placeholder="5-15 letters, numbers, _" autocomplete="username">
+                </div>
+                <div class="form-row">
+                    <label for="password">Password <span aria-hidden="true">*</span></label>
+                    <input type="password" id="password" name="password" required minlength="8" maxlength="20" placeholder="At least 8 characters" autocomplete="new-password">
+                </div>
+                <div class="form-row">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <div class="form-row">
+                    <label>Subscribe to newsletter?</label>
+                    <input type="radio" id="subscribe-yes" name="newsletter" value="yes" required>
+                    <label for="subscribe-yes" style="display:inline;">Yes</label>
+                    <input type="radio" id="subscribe-no" name="newsletter" value="no">
+                    <label for="subscribe-no" style="display:inline;">No</label>
+                </div>
+                <div class="form-row">
+                    <label for="topics">Interested Topics (select all that apply):</label>
+                    <select id="topics" name="topics" multiple size="3">
+                        <option value="html5">HTML5</option>
+                        <option value="css3">CSS3</option>
+                        <option value="js">JavaScript</option>
+                        <option value="accessibility">Accessibility</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself (max 200 chars)"></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="referral">Referral Code</label>
+                    <input type="text" id="referral" name="referral" value="WEB2025" readonly>
+                </div>
+            </fieldset>
+
+            <button type="submit">Register</button>
+        </form>
+    </section>
+</main>
+</body>
+</html>
